@@ -3,8 +3,9 @@ import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 
 import { Navbar } from '../ui/Navbar';
-import { CalendarEvent } from './CalendarEvent';
 import { messages } from '../../helpers/calendar-messages-es';
+import { CalendarEvent } from './CalendarEvent';
+import { CalendarModal } from './CalendarModal';
 import 'moment/locale/es';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
@@ -75,6 +76,8 @@ export const CalendarScreen = ( event, start, end, isSelected ) => {
                     event: CalendarEvent
                 }}
             />
+
+            <CalendarModal />
         </div>
     )
 }
