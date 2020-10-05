@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import DateTimePicker from 'react-datetime-picker';
 import moment from 'moment';
 import Swal from 'sweetalert2';
-import { types } from '../../types/types';
+
 import { uiCloseModal } from '../../actions/ui';
  
 const customStyles = {

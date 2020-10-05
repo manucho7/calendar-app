@@ -8,6 +8,9 @@ import { Navbar } from '../ui/Navbar';
 import { messages } from '../../helpers/calendar-messages-es';
 import { CalendarEvent } from './CalendarEvent';
 import { CalendarModal } from './CalendarModal';
+import { eventSetActive } from '../../actions/events';
+import { AddNewFab } from '../ui/addNewFab';
+
 import 'moment/locale/es';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
@@ -37,7 +40,8 @@ export const CalendarScreen = ( event, start, end, isSelected ) => {
     }
 
     const onSelectEvent = (e) => {
-        console.log(e);
+        dispatch( eventSetActive( e ) );
+        dispatch( uiOpenModal() );
     }
 
     const onViweChange = (e) => {
@@ -80,6 +84,8 @@ export const CalendarScreen = ( event, start, end, isSelected ) => {
                     event: CalendarEvent
                 }}
             />
+
+            <AddNewFab />
 
             <CalendarModal />
         </div>
