@@ -8,8 +8,9 @@ import { Navbar } from '../ui/Navbar';
 import { messages } from '../../helpers/calendar-messages-es';
 import { CalendarEvent } from './CalendarEvent';
 import { CalendarModal } from './CalendarModal';
-import { eventSetActive } from '../../actions/events';
+import { eventClearActiveEvent, eventSetActive } from '../../actions/events';
 import { AddNewFab } from '../ui/addNewFab';
+import { DeleteEventFab } from '../ui/DeleteEventFab';
 
 import 'moment/locale/es';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -23,7 +24,7 @@ export const CalendarScreen = ( event, start, end, isSelected ) => {
     
     const dispatch = useDispatch();
     
-    const { events } = useSelector( state => state.calendar );
+    const { events, activeEvent } = useSelector( state => state.calendar );
     
     const [lastView, setLastView] = useState( localStorage.getItem( 'lastView' ) || 'month' );
 
@@ -38,6 +39,10 @@ export const CalendarScreen = ( event, start, end, isSelected ) => {
     const onViweChange = (e) => {
         setLastView(e);
         localStorage.setItem( 'lastView', e );
+    }
+
+    const onSelectSlot = (e) => {
+        dispatch( eventClearActiveEvent() );
     }
 
 
@@ -70,6 +75,8 @@ export const CalendarScreen = ( event, start, end, isSelected ) => {
                 onDoubleClickEvent={ onDoubleClick }
                 onSelectEvent={ onSelectEvent }
                 onView={ onViweChange }
+                onSelectSlot={ onSelectSlot }
+                selectable={ true }
                 view={ lastView }
                 components={{
                     event: CalendarEvent
@@ -77,6 +84,10 @@ export const CalendarScreen = ( event, start, end, isSelected ) => {
             />
 
             <AddNewFab />
+
+            {
+                ( activeEvent ) && <DeleteEventFab />
+            }
 
             <CalendarModal />
         </div>

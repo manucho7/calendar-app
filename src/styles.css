@@ -64,7 +64,7 @@ html, body {
 }
 
 
-/* FABS */
+/* FABS add */
 .fab {
     border-radius: 100%;
     bottom: 25px;
@@ -72,4 +72,12 @@ html, body {
     padding: 25px;
     position: fixed;
     right: 25px;
+}
+
+/* FABS delete */
+.fab-danger {
+    bottom: 25px;
+    padding: 10px;
+    position: fixed;
+    left: 25px;
 }
