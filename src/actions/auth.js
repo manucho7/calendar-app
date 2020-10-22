@@ -1,7 +1,7 @@
 import { fetchSinToken } from "../helpers/fetch";
 import { types } from "../types/types";
 
-export const startLogin = async(email, password) => {
+export const startLogin = (email, password) => {
     return async( dispatch ) => {
 
         const respuesta = await fetchSinToken( 'auth', { email, password }, 'POST' );
@@ -24,6 +24,6 @@ export const startLogin = async(email, password) => {
 }
 
 const login = ( user ) => ({
-    type: types.authStartLogin,
+    type: types.authLogin,
     payload: user
 })

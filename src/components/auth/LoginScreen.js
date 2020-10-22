@@ -18,7 +18,7 @@ export const LoginScreen = () => {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        dispatch( startLogin(lEmail, lPassword) )
+        dispatch( startLogin(lEmail, lPassword) );
     }
 
 
