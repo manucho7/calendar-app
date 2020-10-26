@@ -24,8 +24,7 @@ export const Navbar = () => {
                 <i className="fas fa-sign-out-alt"></i>
                 <span> Salir</span>
             </button>
-
-
+            
         </div>
     )
 }
