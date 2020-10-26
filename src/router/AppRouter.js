@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { startChecking } from "../../actions/auth";
-import { LoginScreen } from "../auth/LoginScreen";
-import { CalendarScreen } from "../calendar/CalendarScreen";
+import { startChecking } from "../actions/auth";
+import { LoginScreen } from "../components/auth/LoginScreen";
+import { CalendarScreen } from "../components/calendar/CalendarScreen";
 import { PublicRoute } from "./PublicRoute";
 import { PrivateRoute } from "./PrivateRoute";
 
@@ -17,9 +17,7 @@ export const AppRouter = () => {
         dispatch( startChecking() );
     }, [dispatch])
 
-    if ( checking ) {
-        return ( <h5>Espere...</h5> );
-    }
+
 
     return (
         <Router>
