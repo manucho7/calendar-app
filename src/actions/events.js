@@ -3,6 +3,7 @@
 //acciones para eventos
 
 import { fetchConToken } from "../helpers/fetch";
+import { prepareEvents } from "../helpers/prepareEvents";
 import { types } from "../types/types";
 
 export const eventStartAddNew = (event) => {
@@ -57,10 +58,10 @@ export const eventStartLoading = () => {
             
             const resp = await fetchConToken( 'events' );
             const body = await resp.json();
-            const events = body.eventos;
+            const events = prepareEvents(body.eventos);
             console.log( events );
 
-            // dispatch( eventLoaded( events ) )
+            dispatch( eventLoaded( events ) );
 
         } catch (error) {
             console.log( error );
@@ -70,6 +71,6 @@ export const eventStartLoading = () => {
 }
 
 const eventLoaded = (events) => ({
-    type: types.eventLoader,
+    type: types.eventLoaded,
     payload: events
 })
