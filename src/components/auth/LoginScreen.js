@@ -56,7 +56,6 @@ export const LoginScreen = () => {
                                 className="form-control"
                                 placeholder="Correo"
                                 name="lEmail"
-                                value={ lEmail }
                                 onChange={ handleLoginInputChange }
                             />
                         </div>
@@ -66,7 +65,6 @@ export const LoginScreen = () => {
                                 className="form-control"
                                 placeholder="Contraseña"
                                 name="lPassword"
-                                value={ lPassword }
                                 onChange={ handleLoginInputChange }
                             />
                         </div>
@@ -89,7 +87,6 @@ export const LoginScreen = () => {
                                 className="form-control"
                                 placeholder="Nombre"
                                 name="rName"
-                                value={ rName }
                                 onChange={ handleRegisterInputChange }
                             />
                         </div>
@@ -99,7 +96,6 @@ export const LoginScreen = () => {
                                 className="form-control"
                                 placeholder="Correo"
                                 name="rEmail"
-                                value={ rEmail }
                                 onChange={ handleRegisterInputChange }
                             />
                         </div>
@@ -109,7 +105,6 @@ export const LoginScreen = () => {
                                 className="form-control"
                                 placeholder="Contraseña"
                                 name="rPassword"
-                                value={ rPassword }
                                 onChange={ handleRegisterInputChange }
                             />
                         </div>
@@ -120,7 +115,6 @@ export const LoginScreen = () => {
                                 className="form-control"
                                 placeholder="Repita la contraseña"
                                 name="rPassword2"
-                                value={ rPassword2 }
                                 onChange={ handleRegisterInputChange }
                             />
                         </div>
