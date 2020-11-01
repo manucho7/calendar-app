@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import { act } from 'react-dom/test-utils';
 
 import { CalendarScreen } from '../../../components/calendar/CalendarScreen';
 import { messages } from '../../../helpers/calendar-messages-es';
@@ -65,8 +66,10 @@ describe('Pruebas en CalendarScreen', () => {
         calendar.prop('onSelectEvent')({ start: 'hola' });
         expect( eventSetActive ).toHaveBeenCalledWith({ start: 'hola' })
     
-        calendar.prop('onView')('week');
-        expect(localStorage.setItem).toHaveBeenCalledWith('lastView', 'week');
+        act( () => {
+            calendar.prop('onView')('week');
+            expect(localStorage.setItem).toHaveBeenCalledWith('lastView', 'week');
+        })
     });
 
 })
