@@ -117,8 +117,6 @@ describe('Pruebas en <LoginScreen/>', () => {
 
         expect( Swal.fire ).not.toHaveBeenCalled();
         expect( startRegister ).toHaveBeenCalledWith( '', '123456', '' );
-
-
     });
     
 
